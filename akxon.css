@@ -1,0 +1,143 @@
+/* =============================
+   ESTILO GERAL — FUNDO
+============================= */
+
+.akxon-bg {
+    width: 100%;
+    min-height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("../img/akxon.png");
+
+    background-color: #000e1a;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #dffaff;
+}
+
+
+
+/* =============================
+   MENU LATERAL ESQUERDO (compacto)
+============================= */
+
+.akxon-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2%;
+    width: 100px;
+
+    background: rgba(0, 20, 35, 0.05);
+    backdrop-filter: blur(12px);
+
+    padding: 18px 22px;     /* REDUZIDO — antes 45px */
+    display: flex;
+    flex-direction: column;
+    gap: 14px;              /* REDUZIDO — antes 25px */
+
+    box-shadow: 4px 0 30px rgba(0, 255, 255, 0.12);
+}
+
+.akxon-menu a {
+    color: #7de7ff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 8px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.akxon-menu a:hover {
+    color: #ffffff;
+    background: rgba(0, 255, 255, 0.18);
+    text-shadow: 0 0 14px #19d3ff;
+}
+
+
+
+/* =============================
+   LINK EXCLUSIVO WHATSAPP
+============================= */
+
+.akxon-menu a.whatsapp {
+    color: #25d366;
+    font-weight: 700;
+}
+
+.akxon-menu a.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.20);
+    text-shadow: 0 0 12px #25d366;
+    color: #ffffff;
+}
+
+
+
+/* =============================
+   CONTEÚDO CENTRAL
+============================= */
+
+.akxon-center {
+    margin-left: 260px;
+    text-align: center;
+    width: calc(100% - 260px);
+}
+
+.akxon-title {
+    font-size: 60px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 25px #00eaff;
+    margin-bottom: 10px;
+}
+
+.akxon-subtitle {
+    font-size: 24px;
+    opacity: 0.9;
+}
+
+
+
+/* =============================
+   RESPONSIVIDADE
+============================= */
+
+@media (max-width: 900px) {
+    .akxon-menu {
+        width: 200px;
+        padding: 14px 18px;
+    }
+
+    .akxon-center {
+        margin-left: 200px;
+    }
+
+    .akxon-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 700px) {
+    .akxon-menu {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px 12px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        box-shadow: none;
+    }
+
+    .akxon-center {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+}

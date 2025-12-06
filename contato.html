@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato — AKXON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./Assets/css/global.css">
+</head>
+
+<body class="bg-akxon">
+
+<!-- MENU SUPERIOR DINÂMICO -->
+<div id="navbar"></div>
+
+<script>
+    fetch("./Assets/components/navbar.html")
+        .then(r => r.text())
+        .then(html => document.getElementById("navbar").innerHTML = html);
+</script>
+
+<!-- CONTEÚDO -->
+<div class="container">
+    <div class="box">
+        <h1>Contato</h1>
+        <p class="subtitle">Fale diretamente com nossa equipe</p>
+
+        <p>
+            Nosso atendimento é realizado exclusivamente pelo WhatsApp para
+            garantir agilidade e precisão em todas as solicitações.
+        </p>
+
+        <br>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/5511959078945?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20AKXON."
+           target="_blank">
+            Falar pelo WhatsApp
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

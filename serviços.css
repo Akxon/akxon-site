@@ -1,0 +1,192 @@
+/* =============================
+   FUNDO
+============================= */
+
+.servicos-bg {
+    width: 100%;
+    min-height: 100vh;
+
+    background: 
+        linear-gradient(to right, rgba(0, 10, 20, 0.92), rgba(0, 30, 50, 0.92)),
+        url("../img/akxon.png") center/cover no-repeat fixed;
+
+    padding: 30px 40px; /* REDUZIDO PARA TRAZER TUDO PARA O TOPO */
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #dffaff;
+}
+
+
+
+/* =============================
+   BOTÃO DE RETORNO FLUTUANTE
+============================= */
+
+.btn-retorno-flutuante {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+
+    background: rgba(0, 20, 35, 0.28);
+    backdrop-filter: blur(14px);
+
+    padding: 14px 22px;
+    border-radius: 10px;
+
+    color: #7de7ff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 0 14px rgba(0, 255, 255, 0.20);
+    transition: 0.3s;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+
+    z-index: 999;
+}
+
+.btn-retorno-flutuante:hover {
+    background: rgba(0, 255, 255, 0.18);
+    color: #ffffff;
+    box-shadow: 0 0 26px rgba(0, 255, 255, 0.35);
+}
+
+
+
+/* =============================
+   TÍTULO MAIS PRÓXIMO DO TOPO
+============================= */
+
+.servicos-header {
+    text-align: center;
+    margin-bottom: 35px;  /* REDUZIDO */
+}
+
+.servicos-header h1 {
+    font-size: 50px;
+    text-shadow: 0 0 35px #00eaff;
+}
+
+.servicos-header .sub {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+
+
+/* =============================
+   GRID
+============================= */
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+
+
+/* =============================
+   BOX INTELIGENTE
+============================= */
+
+.servico-box {
+    background: rgba(0, 25, 45, 0.26);
+    backdrop-filter: blur(14px);
+
+    padding: 30px;
+    border-radius: 18px;
+
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.18);
+
+    transition: 0.35s ease;
+    border: 1px solid rgba(0, 255, 255, 0.08);
+}
+
+.servico-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 55px rgba(0, 255, 255, 0.32);
+    background: rgba(0, 30, 60, 0.30);
+}
+
+
+
+/* Ícones */
+.icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 14px #00eaff;
+}
+
+
+
+/* Textos */
+
+.servico-box h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 14px #00cfff;
+}
+
+.servico-box p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+
+
+/* Lista */
+
+.servico-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servico-box ul li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.servico-box ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #00eaff;
+}
+
+
+
+/* =============================
+   ANIMAÇÃO
+============================= */
+
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* =============================
+   RESPONSIVIDADE
+============================= */
+
+@media (max-width: 600px) {
+    .servicos-header h1 {
+        font-size: 40px;
+    }
+
+    .servico-box {
+        padding: 25px;
+    }
+}
