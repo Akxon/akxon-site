@@ -10,32 +10,33 @@
 html, body {
     width: 100%;
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important; /* Evita corte lateral no celular */
 }
 
-/* Só aplica o fundo AKXON para páginas padrão, não para o UCD login */
+/* Fundo padrão para páginas que não usam login */
 body:not(.login-body) {
     background-color: #000e1a !important;
 }
 
-
 /* ===========================================
-   AJUSTE PARA QUE O MENU FIXO NÃO CUBRA O TOPO
+   AJUSTE DE ESPAÇAMENTO GLOBAL
 =========================================== */
 body {
-    padding-top: 90px !important; 
+    padding-top: 90px !important; /* compensa navbar fixa */
 }
 
 /* ===========================================
-   FUNDO PADRÃO DAS PÁGINAS COM IMAGEM
+   FUNDO PADRÃO DAS PÁGINAS
 =========================================== */
 .bg-akxon {
-    background: url("../img/akxon.png") center/cover no-repeat fixed;
+    background: url("../img/akxon.png") center/cover no-repeat;
+    background-attachment: scroll; /* Correção: evita corte no celular */
 }
 
 /* ===========================================
-   MENU SUPERIOR FIXO — BARRA PREMIUM AKXON
+   MENU SUPERIOR FIXO — NAVBAR
 =========================================== */
-
 .akxon-navbar {
     position: fixed;
     top: 0;
@@ -75,7 +76,7 @@ body {
     text-shadow: 0 0 12px #19d3ff;
 }
 
-/* Destaque especial (Portal UCD) */
+/* Destaque (Portal UCD) */
 .menu-item.destaque {
     color: #00eaff;
     font-weight: 700;
@@ -87,9 +88,8 @@ body {
 }
 
 /* ===========================================
-   BOXES DE CONTEÚDO GENÉRICAS
+   CONTAINERS E BOXES
 =========================================== */
-
 .container {
     width: 90%;
     max-width: 1100px;
@@ -106,8 +106,6 @@ body {
 /* ===========================================
    TIPOGRAFIA UNIFICADA AKXON/UCD
 =========================================== */
-
-/* TÍTULOS */
 h1, h2, h3 {
     font-family: "Segoe UI", Arial, sans-serif;
     color: #eafaff;
@@ -116,25 +114,21 @@ h1, h2, h3 {
     margin-bottom: 18px;
 }
 
-/* H1 MAIOR */
 h1 {
     font-size: 2.8rem;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.35); /* glow suave e elegante */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.35);
 }
 
-/* H2 */
 h2 {
     font-size: 2rem;
     text-shadow: 0 0 6px rgba(0, 255, 255, 0.25);
 }
 
-/* H3 */
 h3 {
     font-size: 1.4rem;
     text-shadow: 0 0 4px rgba(0, 255, 255, 0.2);
 }
 
-/* SUBTÍTULOS */
 .subtitle {
     font-size: 1.2rem;
     color: #dfeff4;
@@ -142,9 +136,7 @@ h3 {
     margin-bottom: 22px;
 }
 
-/* TÍTULO DESTACADO */
 .titulo-destaque {
-    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: #00eaff;
@@ -153,20 +145,17 @@ h3 {
     margin: 30px 0;
 }
 
-/* TEXTO PADRÃO */
+/* Texto padrão */
 p {
-    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 1.15rem;
     line-height: 1.7;
     color: #d6e4ea;
-    opacity: 1 !important;  /* Texto sempre totalmente visível */
+    opacity: 1 !important;
 }
 
-
 /* ===========================================
-   BOTÃO PADRÃO (EX: WHATSAPP)
+   BOTÕES
 =========================================== */
-
 .btn {
     padding: 14px 22px;
     font-size: 20px;
@@ -181,7 +170,7 @@ p {
     transform: scale(1.05);
 }
 
-/* Botão WhatsApp */
+/* WhatsApp */
 .btn-whatsapp {
     background: #25d366;
     color: #ffffff;
@@ -194,41 +183,8 @@ p {
 }
 
 /* ===========================================
-   RESPONSIVIDADE
+   SEÇÃO: RUPTURA TÉCNICA UCD
 =========================================== */
-
-@media (max-width: 900px) {
-
-    .menu-container {
-        gap: 22px;
-        margin-left: 20px;
-    }
-
-    .menu-item {
-        font-size: 16px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .akxon-navbar {
-        height: 60px;
-    }
-
-    .menu-container {
-        gap: 16px;
-        margin-left: 10px;
-    }
-
-    .menu-item {
-        font-size: 14px;
-    }
-}
-/* ===== SEÇÃO RUPTURA TÉCNICA ===== */
 .ucd-ruptura {
     padding: 20px 6% 60px 6%;
     background: linear-gradient(135deg, #00121f 0%, #002c41 100%);
@@ -236,7 +192,6 @@ p {
 }
 
 .ucd-ruptura-titulo {
-    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 2.4rem;
     font-weight: 800;
     color: #00c6ff;
@@ -253,15 +208,19 @@ p {
     opacity: 0.9;
 }
 
-/* ===== GRID ===== */
+/* ===========================================
+   GRID RESPONSIVO CORRIGIDO (ANTES FIXO)
+=========================================== */
 .ucd-cards {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);  /* força 5 colunas fixas */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 28px;
     justify-items: stretch;
 }
 
-/* ===== CARD ===== */
+/* ===========================================
+   CARD
+=========================================== */
 .ucd-card {
     background: rgba(255, 255, 255, 0.05);
     border-left: 4px solid #00c6ff;
@@ -276,7 +235,6 @@ p {
     box-shadow: 0 0 22px rgba(0, 198, 255, 0.3);
 }
 
-/* ===== ÍCONES ===== */
 .ucd-icon {
     font-size: 2rem;
     margin-bottom: 12px;
@@ -293,4 +251,33 @@ p {
     font-size: 0.95rem;
     line-height: 1.5;
     opacity: 0.9;
+}
+
+/* ===========================================
+   RESPONSIVIDADE FINAL
+=========================================== */
+@media (max-width: 900px) {
+    .menu-container {
+        gap: 22px;
+        margin-left: 20px;
+    }
+    .menu-item {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .akxon-navbar {
+        height: 60px;
+    }
+    .menu-container {
+        gap: 16px;
+        margin-left: 10px;
+    }
+    .menu-item {
+        font-size: 14px;
+    }
 }
