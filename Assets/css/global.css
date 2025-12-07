@@ -58,8 +58,10 @@ body {
 /* Contêiner dos links */
 .menu-container {
     display: flex;
-    gap: 40px;
-    margin-left: 40px;
+    gap: 20px;
+    margin-left: 10px;
+    flex-wrap: wrap;        /* 🔥 Permite que os itens quebrem linha no celular */
+    justify-content: center; /* 🔥 Centraliza no mobile */
 }
 
 /* Links de menu */
