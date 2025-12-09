@@ -1,0 +1,313 @@
+/* ===========================================
+   RESET GLOBAL E BASE TIPOGRÁFICA
+=========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important; /* Evita corte lateral no celular */
+}
+
+/* Fundo padrão para páginas que não usam login */
+body:not(.login-body) {
+    background-color: #000e1a !important;
+}
+
+/* ===========================================
+   AJUSTE DE ESPAÇAMENTO GLOBAL
+=========================================== */
+body {
+    padding-top: 90px !important; /* compensa navbar fixa */
+}
+
+/* ===========================================
+   FUNDO PADRÃO DAS PÁGINAS
+=========================================== */
+.bg-akxon {
+    background: url("../img/akxon.png") center/cover no-repeat;
+    background-attachment: scroll; /* Correção: evita corte no celular */
+}
+
+/* ===========================================
+   MENU SUPERIOR FIXO — NAVBAR
+=========================================== */
+.akxon-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    background: rgba(0, 20, 35, 0.70);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+
+    z-index: 9999;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.12);
+}
+
+/* Contêiner dos links */
+.menu-container {
+    display: flex;
+    gap: 20px;
+    margin-left: 10px;
+    flex-wrap: wrap;        /* 🔥 Permite que os itens quebrem linha no celular */
+    justify-content: center; /* 🔥 Centraliza no mobile */
+}
+
+/* Links de menu */
+.menu-item {
+    color: #7de7ff;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px #19d3ff;
+}
+
+/* Destaque (Portal UCD) */
+.menu-item.destaque {
+    color: #00eaff;
+    font-weight: 700;
+}
+
+.menu-item.destaque:hover {
+    color: #ffffff;
+    text-shadow: 0 0 16px #00eaff;
+}
+
+/* ===========================================
+   CONTAINERS E BOXES
+=========================================== */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.box {
+    background: rgba(0, 24, 39, 0.55);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.18);
+}
+
+/* ===========================================
+   TIPOGRAFIA UNIFICADA AKXON/UCD
+=========================================== */
+h1, h2, h3 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #eafaff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.35);
+}
+
+h2 {
+    font-size: 2rem;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.25);
+}
+
+h3 {
+    font-size: 1.4rem;
+    text-shadow: 0 0 4px rgba(0, 255, 255, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #dfeff4;
+    opacity: 0.9;
+    margin-bottom: 22px;
+}
+
+.titulo-destaque {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #00eaff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 30px 0;
+}
+
+/* Texto padrão */
+p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #d6e4ea;
+    opacity: 1 !important;
+}
+
+/* ===========================================
+   BOTÕES
+=========================================== */
+.btn {
+    padding: 14px 22px;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* WhatsApp */
+.btn-whatsapp {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5b;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.9);
+}
+
+/* ===========================================
+   SEÇÃO: RUPTURA TÉCNICA UCD
+=========================================== */
+.ucd-ruptura {
+    padding: 20px 6% 60px 6%;
+    background: linear-gradient(135deg, #00121f 0%, #002c41 100%);
+    color: #dffaff;
+}
+
+.ucd-ruptura-titulo {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #00c6ff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ucd-ruptura-subtitulo {
+    font-size: 1.2rem;
+    max-width: 850px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* ===========================================
+   GRID RESPONSIVO CORRIGIDO (ANTES FIXO)
+=========================================== */
+.ucd-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    justify-items: stretch;
+}
+
+/* ===========================================
+   CARD
+=========================================== */
+.ucd-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #00c6ff;
+    padding: 26px 24px;
+    border-radius: 14px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 198, 255, 0.1);
+}
+
+.ucd-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 22px rgba(0, 198, 255, 0.3);
+}
+
+.ucd-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.ucd-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #00d9ff;
+}
+
+.ucd-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* ===========================================
+   RESPONSIVIDADE FINAL
+=========================================== */
+@media (max-width: 900px) {
+    .menu-container {
+        gap: 22px;
+        margin-left: 20px;
+    }
+    .menu-item {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .akxon-navbar {
+        height: 60px;
+    }
+    .menu-container {
+        gap: 16px;
+        margin-left: 10px;
+    }
+    .menu-item {
+        font-size: 14px;
+    }
+}
+/* BACKGROUND RESPONSIVO — COBRE A TELA INTEIRA */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* CLASSE DO FUNDO PRINCIPAL */
+.akxon-bg {
+    min-height: 100vh;             /* Garante que cobre toda a altura */
+    width: 100%;
+    
+    background-image: url("../img/background.jpg");
+    background-size: cover;        /* Ajuste perfeito sem distorcer */
+    background-position: center;   /* Centraliza em todas telas */
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  /* Mantém o efeito fixo no desktop */
+}
+
+/* CORREÇÃO EXCLUSIVA PARA CELULAR */
+@media (max-width: 768px) {
+    .akxon-bg {
+        background-attachment: scroll; /* Evita bug de quebra no mobile */
+        background-size: cover;
+        background-position: top center; /* Melhora o enquadramento no celular */
+    }
+}
