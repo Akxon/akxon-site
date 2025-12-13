@@ -5,18 +5,12 @@
     <title>AKXON — Serviços | UCD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS GLOBAL -->
     <link rel="stylesheet" href="./Assets/css/global.css">
-
-    <!-- CSS ESPECÍFICO DA PÁGINA SERVIÇOS -->
-    <link rel="stylesheet" href="./Assets/css/serviços.css">
 </head>
 
 <body class="bg-akxon">
 
-<!-- =============================
-     MENU SUPERIOR DINÂMICO
-============================= -->
+<!-- NAVBAR -->
 <div id="navbar"></div>
 <script>
     fetch("./Assets/components/navbar.html")
@@ -24,88 +18,59 @@
         .then(html => document.getElementById("navbar").innerHTML = html);
 </script>
 
-<!-- =============================
-     HERO / CABEÇALHO DA PÁGINA
-============================= -->
-<section class="servicos-hero">
-    <div class="servicos-hero-content">
-        <h1>Serviços e Soluções Corporativas</h1>
-    </div>
-</section>
+<!-- CONTEÚDO PRINCIPAL -->
+<div class="container">
+    <div class="box">
 
-<!-- =============================
-     SEÇÃO: RUPTURA TÉCNICA UCD
-============================= -->
-<section class="ucd-ruptura">
+        <h2 class="ucd-ruptura-titulo" style="font-weight: 800; font-size: 1.8rem;">
+            Ruptura Técnica Definitiva no Mercado Corporativo
+        </h2>
 
-    <h2 class="ucd-ruptura-titulo">
-        Ruptura Técnica Definitiva no Mercado Corporativo
-    </h2>
+        <p style="color:#000;">
+            O UCD redefine a arquitetura empresarial substituindo parametrização humana
+            por inteligência embarcada e unificação absoluta de dados.
+        </p>
 
-    <p class="ucd-ruptura-subtitulo">
-        O UCD redefine a arquitetura dos sistemas empresariais ao substituir a 
-        parametrização humana por inteligência embarcada, previsibilidade sistêmica 
-        e unificação total de dados.
-    </p>
+        <!-- LISTA CORPORATIVA (SEM CARDS) -->
+        <div class="ucd-lista-pontos">
 
-    <!-- BLOCO RESPONSIVO DE SERVIÇOS -->
-    <div class="ucd-cards">
+            <div class="ponto">
+                <div>
+                    <h3>1. Inteligência Fiscal e Contábil Nativa</h3>
+                </div>
+            </div>
 
-        <div class="ucd-card">
-            <div class="ucd-icon">⚖️</div>
-            <h3>1. Inteligência Fiscal e Contábil Nativa</h3>
-            <p>
-                Todas as regras fiscais, contábeis e legais são tratadas no núcleo do 
-                sistema, eliminando parametrizações manuais e reduzindo inconsistências 
-                estruturais.
-            </p>
-        </div>
+            <div class="ponto">
+                <div>
+                    <h3>2. Cadastro Unificado Corporativo</h3>
+                </div>
+            </div>
 
-        <div class="ucd-card">
-            <div class="ucd-icon">📇</div>
-            <h3>2. Cadastro Unificado Corporativo</h3>
-            <p>
-                Um master data único governa pessoas, itens e operações, removendo 
-                duplicidades e garantindo integração real entre todos os módulos 
-                operacionais.
-            </p>
-        </div>
+            <div class="ponto">
+                <div>
+                    <h3>3. Banco de Dados Relacional Unificado</h3>
+                </div>
+            </div>
 
-        <div class="ucd-card">
-            <div class="ucd-icon">🗄️</div>
-            <h3>3. Banco de Dados Relacional Unificado</h3>
-            <p>
-                Compras, produção, faturamento, financeiro, fiscal, contábil e folha 
-                operam sobre a mesma matriz lógica de dados, com consistência total.
-            </p>
-        </div>
+            <div class="ponto">
+                <div>
+                </div>
+            </div>
 
-        <div class="ucd-card">
-            <div class="ucd-icon">⚙️</div>
-            <h3>4. Engine de Processamento Inteligente</h3>
-            <p>
-                Cada evento gera automaticamente todos os registros subsequentes com 
-                rastreabilidade completa, permitindo auditoria contínua e precisa.
-            </p>
-        </div>
+            <div class="ponto">
+                <div>
+                    <h3>5. Redução de Complexidade Operacional</h3>
+                </div>
+            </div>
 
-        <div class="ucd-card">
-            <div class="ucd-icon">💡</div>
-            <h3>5. Redução de Complexidade Operacional</h3>
-            <p>
-                O sistema prevê, interpreta e aplica regras com autonomia, transformando 
-                ambientes complexos em operações simples, rápidas e seguras.
-            </p>
         </div>
 
     </div>
-</section>
+</div>
 
-<!-- =============================
-     RODAPÉ
-============================= -->
+<!-- RODAPÉ -->
 <footer class="akxon-footer">
-    <p>© 2025 AKXON Inteligência Corporativa — Todos os direitos reservados.</p>
+    <p>© 2025 AKXON Corporate Intelligence — Todos os direitos reservados.</p>
 </footer>
 
 </body>

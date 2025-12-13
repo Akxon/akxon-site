@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contratar UCD — AKXON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/contratar_ucd.css">
+
+    <!-- JS -->
+    <script defer src="./assets/js/script.js"></script>
+    <script defer src="./assets/js/contratar_ucd.js"></script>
+</head>
+
+<body class="bg-akxon contratar-body">
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("./assets/components/navbar.html")
+  .then(r => r.text())
+  .then(html => document.getElementById("navbar").innerHTML = html);
+</script>
+
+<div class="container">
+<div class="box ucd-contratar-box">
+
+<h1 class="ucd-titulo">Ativar UCD para sua empresa</h1>
+<p class="ucd-subtitulo">
+Onboarding automático com Receita Federal, SEFAZ e Junta Comercial.
+</p>
+
+<!-- CNPJ -->
+<div class="ucd-linha-cnpj">
+    <input id="cnpjInput" placeholder="00.000.000/0000-00">
+    <button id="btnOnboarding" class="btn-primario">
+        Validar e carregar dados
+    </button>
+</div>
+
+<div id="statusOnboarding" class="ucd-status"></div>
+
+<!-- DADOS -->
+<div id="dadosEmpresa" class="hidden">
+
+<section class="ucd-bloco">
+<h2>Receita Federal</h2>
+<div class="ucd-grid">
+<span id="rfRazao">–</span>
+<span id="rfFantasia">–</span>
+<span id="rfSituacao">–</span>
+<span id="rfCnae">–</span>
+<span id="rfEndereco">–</span>
+</div>
+</section>
+
+<section class="ucd-bloco">
+<h2>Cadastro UCD</h2>
+<div class="ucd-grid">
+<span id="psId">–</span>
+<span id="psGrupo">–</span>
+<span id="psSituacao">–</span>
+<span id="psStatusRel">–</span>
+</div>
+</section>
+
+<section class="ucd-bloco">
+<h2>Contrato</h2>
+
+<div id="acoesContrato" class="hidden">
+    <button id="btnGerarContrato" class="btn-primario">
+        Gerar contrato
+    </button>
+
+    <button id="btnDownloadPdf" class="btn-secundario">
+        📄 Baixar PDF
+    </button>
+
+    <button id="btnAceiteSimples" class="btn-secundario">
+        ✔ Aceitar contrato
+    </button>
+</div>
+
+<div id="statusContrato" class="ucd-status"></div>
+<div id="statusAssinatura" class="ucd-status"></div>
+
+</section>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

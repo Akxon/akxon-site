@@ -1,143 +1,225 @@
-/* =============================
-   ESTILO GERAL — FUNDO
-============================= */
-
-.akxon-bg {
-    width: 100%;
-    min-height: 100vh;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: url("../img/akxon.png");
-
-    background-color: #000e1a;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #dffaff;
+/* ===========================================
+   RESET GLOBAL E BASE TIPOGRÁFICA
+=========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden !important;
+}
 
+/* Fundo padrão para páginas que não usam login */
+body:not(.login-body) {
+    background-color: #000e1a !important;
+}
 
-/* =============================
-   MENU LATERAL ESQUERDO (compacto)
-============================= */
+/* ===========================================
+   AJUSTE GLOBAL DE LAYOUT
+=========================================== */
+body {
+    padding-top: 90px !important; /* Compensa navbar fixa */
+}
 
-.akxon-menu {
+/* ===========================================
+   BACKGROUND OFICIAL DAS PÁGINAS (SEM CORTE)
+=========================================== */
+.bg-akxon {
+    background-image: url("../img/akxon.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+    background-attachment: scroll; /* evita corte no mobile */
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ===========================================
+   MENU SUPERIOR FIXO — NAVBAR
+=========================================== */
+.akxon-navbar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 2%;
-    width: 100px;
 
-    background: rgba(0, 20, 35, 0.05);
-    backdrop-filter: blur(12px);
+    width: 100%;
+    height: 70px;
 
-    padding: 18px 22px;     /* REDUZIDO — antes 45px */
+    background: rgba(0, 20, 35, 0.70);
+    backdrop-filter: blur(8px);
+
     display: flex;
-    flex-direction: column;
-    gap: 14px;              /* REDUZIDO — antes 25px */
-
-    box-shadow: 4px 0 30px rgba(0, 255, 255, 0.12);
+    align-items: center;
+    z-index: 9999;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.12);
 }
 
-.akxon-menu a {
+.menu-container {
+    display: flex;
+    gap: 20px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
     color: #7de7ff;
     font-size: 20px;
-    text-decoration: none;
     font-weight: 600;
-    padding: 10px 8px;
-    border-radius: 8px;
-    transition: 0.3s;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
 }
 
-.akxon-menu a:hover {
+.menu-item:hover {
     color: #ffffff;
-    background: rgba(0, 255, 255, 0.18);
-    text-shadow: 0 0 14px #19d3ff;
+    text-shadow: 0 0 12px #19d3ff;
 }
 
-
-
-/* =============================
-   LINK EXCLUSIVO WHATSAPP
-============================= */
-
-.akxon-menu a.whatsapp {
-    color: #25d366;
+.menu-item.destaque {
+    color: #00eaff;
     font-weight: 700;
 }
 
-.akxon-menu a.whatsapp:hover {
-    background: rgba(37, 211, 102, 0.20);
-    text-shadow: 0 0 12px #25d366;
-    color: #ffffff;
+.menu-item.destaque:hover {
+    color: white;
+    text-shadow: 0 0 16px #00eaff;
 }
 
-
-
-/* =============================
-   CONTEÚDO CENTRAL
-============================= */
-
-.akxon-center {
-    margin-left: 260px;
-    text-align: center;
-    width: calc(100% - 260px);
+/* ===========================================
+   CONTAINERS E BOXES
+=========================================== */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
 }
 
-.akxon-title {
-    font-size: 60px;
-    letter-spacing: 4px;
-    text-shadow: 0 0 25px #00eaff;
-    margin-bottom: 10px;
+.box {
+    background: rgba(0, 24, 39, 0.55);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.18);
 }
 
-.akxon-subtitle {
-    font-size: 24px;
+/* ===========================================
+   TIPOGRAFIA UNIFICADA
+=========================================== */
+h1, h2, h3 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #eafaff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.35);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #dfeff4;
     opacity: 0.9;
+    margin-bottom: 22px;
 }
 
+p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #d6e4ea;
+}
 
+/* ===========================================
+   BOTÕES
+=========================================== */
+.btn {
+    padding: 14px 22px;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
 
-/* =============================
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5b;
+}
+
+/* ===========================================
+   RUPTURA UCD — GRID E CARDS
+=========================================== */
+.ucd-ruptura {
+    padding: 20px 6% 60px 6%;
+    background: linear-gradient(135deg, #00121f, #002c41);
+    color: #dffaff;
+}
+
+.ucd-ruptura-titulo {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #00c6ff;
+}
+
+.ucd-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.ucd-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #00c6ff;
+    padding: 26px 24px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+/* ===========================================
    RESPONSIVIDADE
-============================= */
-
+=========================================== */
 @media (max-width: 900px) {
-    .akxon-menu {
-        width: 200px;
-        padding: 14px 18px;
-    }
-
-    .akxon-center {
-        margin-left: 200px;
-    }
-
-    .akxon-title {
-        font-size: 48px;
-    }
+    .menu-item { font-size: 16px; }
 }
 
-@media (max-width: 700px) {
-    .akxon-menu {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 10px 12px;
-        flex-direction: row;
-        justify-content: center;
-        gap: 12px;
-        box-shadow: none;
-    }
+@media (max-width: 600px) {
+    .menu-item { font-size: 14px; }
+}
 
-    .akxon-center {
-        margin-left: 0;
-        margin-top: 40px;
-    }
+/* ===========================================
+   🔥 REMOVIDO O PROBLEMA DO MOBILE:
+   A CLASSE akxon-bg NÃO TERÁ MAIS background FIXED
+=========================================== */
+
+.akxon-bg {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll !important; /* 🔥 corrigido */
 }
